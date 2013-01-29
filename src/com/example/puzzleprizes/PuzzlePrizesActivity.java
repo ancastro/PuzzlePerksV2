@@ -38,25 +38,31 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	        View otherButton = findViewById(R.id.other_button);
 	        otherButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-    	    		openNewGameDialog();
+    	    		openNewGameDialog(0);
                 }
     });
 	        View restaurantButton = findViewById(R.id.restaurant_button);
 	        restaurantButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-    	    		openNewGameDialog();
+    	    		openRestaurantDialog();
                 }
     });
 	        View eventsButton = findViewById(R.id.events_button);
 	        eventsButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-    	    		openNewGameDialog();
+					openNewGameDialog(0);
                 }
     });
 	        View personalButton = findViewById(R.id.personal_button);
 	        personalButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-    	    		openNewGameDialog();
+    	    		openNewGameDialog(0);
+                }
+    });
+	        View hotelButton = findViewById(R.id.hotel_button);
+	        hotelButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+    	    		openNewGameDialog(0);
                 }
     });
 //	        newButton.setOnClickListener((android.view.View.OnClickListener) this);
@@ -66,12 +72,12 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
                 	startActivity(new Intent(PuzzlePrizesActivity.this, About.class));
                 }
     });
-	        View exitButton = findViewById(R.id.exit_button);
+/*	        View exitButton = findViewById(R.id.exit_button);
 	        exitButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
     	    		finish();
                 }
-    });
+    });*/
 	    }
 
 	    @Override
@@ -100,7 +106,7 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    		startActivity(i);
 	    		break;
 	    	case R.id.new_button:
-	    		openNewGameDialog();
+	    		openNewGameDialog(0);
 	    		break;
 	    	case R.id.exit_button:
 	    		finish();
@@ -111,23 +117,34 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    	}
 	    }
 
-	    private void openNewGameDialog() {
+	    private void openNewGameDialog(final int h) {
 	    	new AlertDialog.Builder(this)
 	    		.setTitle(R.string.new_game_title)
-//	    		.setTitle(alphaSub)
 	    		.setItems(R.array.difficulty,
 	    			new DialogInterface.OnClickListener() {
 			    		public void onClick(DialogInterface dialoginterface, int i) {
-			    			startGame(i);
+			    			startGame(i,h);
 			    		}
 	    	}).show();
 	    }
 
-	    private void startGame(int i) {
+	    private void startGame(int i, int h) {
 	    	Log.d(TAG, "clicked on " + i);
 	    	Intent intent = new Intent(PuzzlePrizesActivity.this, Game.class);
 	    	intent.putExtra(Game.KEY_DIFFICULTY, i);
 	    	startActivity(intent);
+	    }
+	    
+	    private void openRestaurantDialog() {
+	    	Log.d(TAG, "clicked on Restaurant");
+	    	new AlertDialog.Builder(this)
+    		.setTitle(R.string.restaurant_label)
+    		.setItems(R.array.restaurants,
+    			new DialogInterface.OnClickListener() {
+		    		public void onClick(DialogInterface dialoginterface, int h) {
+		    			openNewGameDialog(h);
+		    		}
+    	}).show();
 	    }
 
 		@Override

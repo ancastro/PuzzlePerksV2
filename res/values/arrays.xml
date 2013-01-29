@@ -5,4 +5,12 @@
 		<item>@string/medium_label</item>
 		<item>@string/hard_label</item>
 	</array>
+	<array name="restaurants">
+		<item>@string/r1_label</item>
+		<item>@string/r2_label</item>
+		<item>@string/r3_label</item>
+		<item>@string/r4_label</item>
+		<item>@string/r5_label</item>
+		<item>@string/r6_label</item>
+	</array>
 </resources>

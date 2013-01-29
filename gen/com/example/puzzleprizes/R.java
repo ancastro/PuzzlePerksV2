@@ -14,6 +14,7 @@ public final class R {
     }
     public static final class array {
         public static final int difficulty=0x7f060000;
+        public static final int restaurants=0x7f060001;
     }
     public static final class attr {
     }
@@ -34,11 +35,12 @@ public final class R {
         public static final int puzzle_logo_1=0x7f020001;
     }
     public static final class id {
-        public static final int about_button=0x7f0b0006;
+        public static final int about_button=0x7f0b0007;
         public static final int about_content=0x7f0b0000;
         public static final int continue_button=0x7f0b0012;
         public static final int events_button=0x7f0b0004;
-        public static final int exit_button=0x7f0b0007;
+        public static final int exit_button=0x7f0b0014;
+        public static final int hotel_button=0x7f0b0006;
         public static final int imageView1=0x7f0b0001;
         public static final int keypad=0x7f0b0008;
         public static final int keypad_1=0x7f0b0009;
@@ -50,12 +52,12 @@ public final class R {
         public static final int keypad_7=0x7f0b000f;
         public static final int keypad_8=0x7f0b0010;
         public static final int keypad_9=0x7f0b0011;
-        public static final int menu_settings=0x7f0b0014;
+        public static final int menu_settings=0x7f0b0015;
         public static final int new_button=0x7f0b0013;
         public static final int other_button=0x7f0b0005;
         public static final int personal_button=0x7f0b0003;
         public static final int restaurant_button=0x7f0b0002;
-        public static final int settings=0x7f0b0015;
+        public static final int settings=0x7f0b0016;
     }
     public static final class layout {
         public static final int about=0x7f030000;
@@ -67,43 +69,53 @@ public final class R {
         public static final int activity_puzzle_prizes=0x7f0a0000;
     }
     public static final class string {
-        public static final int about_label=0x7f080008;
-        public static final int about_text=0x7f08000e;
+        public static final int about_label=0x7f080009;
+        public static final int about_text=0x7f08000f;
         /**  About Screen 
          */
-        public static final int about_title=0x7f08000d;
-        public static final int app_name=0x7f08000a;
+        public static final int about_title=0x7f08000e;
+        public static final int app_name=0x7f08000b;
         public static final int continue_label=0x7f080002;
-        public static final int easy_label=0x7f080017;
+        public static final int easy_label=0x7f080018;
         public static final int events_label=0x7f080007;
-        public static final int exit_label=0x7f080009;
+        public static final int exit_label=0x7f08000a;
         /**  Game 
          */
-        public static final int game_title=0x7f08001a;
-        public static final int hard_label=0x7f080019;
+        public static final int game_title=0x7f08001b;
+        public static final int hard_label=0x7f08001a;
         public static final int hello=0x7f080000;
-        public static final int hello_world=0x7f08000b;
-        public static final int hints_summary=0x7f080015;
-        public static final int hints_title=0x7f080014;
-        public static final int keypad_title=0x7f08001c;
+        public static final int hello_world=0x7f08000c;
+        public static final int hints_summary=0x7f080016;
+        public static final int hints_title=0x7f080015;
+        public static final int hotel_label=0x7f080008;
+        public static final int keypad_title=0x7f08001d;
         public static final int main_title=0x7f080001;
-        public static final int medium_label=0x7f080018;
-        public static final int menu_settings=0x7f08000c;
-        public static final int music_summary=0x7f080013;
-        public static final int music_title=0x7f080012;
+        public static final int medium_label=0x7f080019;
+        public static final int menu_settings=0x7f08000d;
+        public static final int music_summary=0x7f080014;
+        public static final int music_title=0x7f080013;
         public static final int new_game_label=0x7f080003;
         /**  New Game 
          */
-        public static final int new_game_title=0x7f080016;
-        public static final int no_moves_label=0x7f08001b;
+        public static final int new_game_title=0x7f080017;
+        public static final int no_moves_label=0x7f08001c;
         public static final int other_label=0x7f080006;
         public static final int personal_label=0x7f080005;
+        /**   Restaurants  
+         */
+        public static final int r1_label=0x7f08001f;
+        public static final int r2_label=0x7f080020;
+        public static final int r3_label=0x7f080021;
+        public static final int r4_label=0x7f080022;
+        public static final int r5_label=0x7f080023;
+        public static final int r6_label=0x7f080024;
         public static final int restaurant_label=0x7f080004;
         /**  Settings Screen 
          */
-        public static final int settings_label=0x7f08000f;
-        public static final int settings_shortcut=0x7f080011;
-        public static final int settings_title=0x7f080010;
+        public static final int settings_label=0x7f080010;
+        public static final int settings_shortcut=0x7f080012;
+        public static final int settings_title=0x7f080011;
+        public static final int you_won_label=0x7f08001e;
     }
     public static final class style {
         /** 

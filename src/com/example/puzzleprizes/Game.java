@@ -15,6 +15,8 @@ public class Game extends Activity {
 	public static final int DIFFICULTY_MEDIUM =1;
 	public static final int DIFFICULTY_HARD = 2;
 
+	public static final String KEY_RESTAURANTS = "com.example.sudoku.restaurants";
+
 	private int puzzle[] = new int[9 * 9];
 
 	private PuzzleView puzzleView;
@@ -25,7 +27,8 @@ public class Game extends Activity {
 		Log.d(TAG, "onCreate");
 		
 		int diff = getIntent().getIntExtra(KEY_DIFFICULTY, DIFFICULTY_EASY);
-		puzzle = getPuzzle(diff);
+		int rest = getIntent().getIntExtra(KEY_RESTAURANTS, 0);
+		puzzle = getPuzzle(diff,rest);
 		calculateUsedTiles();
 		
 		String mystring = getResources().getString(R.string.game_title);
@@ -123,12 +126,14 @@ public class Game extends Activity {
 		return c1;
 	}
 
-	private final String easyPuzzle = "360000000004230800000004200" + "070460003820000014500013020" + "001900000007048300000000045" ;
+//	private final String easyPuzzle = "360000000004230800000004200" + "070460003820000014500013020" + "001900000007048300000000045" ;
+//	private final String easyPuzzle = "075100304009805000000907008" + "204300600090000080507061009" + "050602040000509800008013720" ;
+	private final String easyPuzzle = "875126394149835276326947518" + "214398657693754182587261439" + "751682943432579861968413720" ;
 	private final String mediumPuzzle = "650000070000506000014000005" + "007009000002314700000700800" + "500000630000201000030000097" ;
 	private final String hardPuzzle = "009000000080605020501078000" + "000000700706040102004000000" + "000720903090301080000000600" ;
-	private final String alphaSub = "ABCDEFGHIK" ;
+	private final String alphaSub = "ABIMORSTY" ;
 	
-	private int[] getPuzzle(int diff) {
+	private int[] getPuzzle(int diff, int rest) {
 		String puz;
 		// TODO: Continue last game
 		switch(diff) {

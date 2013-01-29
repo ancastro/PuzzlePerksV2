@@ -5,9 +5,10 @@
     <string name="continue_label">Continue</string>
     <string name="new_game_label">New Game</string>
     <string name="restaurant_label">Restaurants</string>
-    <string name="personal_label">Personal Luxury</string>
+    <string name="personal_label">Personal Care</string>
     <string name="other_label">Other Stores</string>
     <string name="events_label">Events</string>
+    <string name="hotel_label">Hotel/Travel</string>
     <string name="about_label">About</string>
     <string name="exit_label">Exit</string>
     <string name="app_name">PuzzlePerks</string>
@@ -22,7 +23,7 @@ Starting with a partially completed 9x9 grid, the
 objective is to fill the grid so that each
 row, each column, and each of the 3x3 boxes
 (also called <i>blocks</i>) contains the characters
-in the &quot;Key&quot; exactly once.
+in the "Key"" exactly once.
 	</string>
 
 	<!-- Settings Screen -->
@@ -44,4 +45,14 @@ in the &quot;Key&quot; exactly once.
 	<string name='game_title'>PuzzlePerks</string>
 	<string name='no_moves_label'>No moves</string>
 	<string name='keypad_title'>Keypad</string>
+	<string name='you_won_label'>You Won!</string>
+	
+	<!--  Restaurants  -->
+	<string name='r1_label'>Ambrosia India Bistro</string>
+	<string name='r2_label'>Bubba Gumps</string>
+	<string name='r3_label'>Sardine Factory</string>
+	<string name='r4_label'>Sly McFly\'s</string>
+	<string name='r5_label'>Cannery Row Brewing</string>
+	<string name='r6_label'>Johnny Rockets</string>
+				
 </resources>

@@ -1,6 +1,8 @@
 package com.example.puzzleprizes;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,11 +10,13 @@ import android.graphics.Rect;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 public class PuzzleView extends View {
 	private static final String TAG = "Sudoku";
@@ -30,6 +34,16 @@ public class PuzzleView extends View {
 	private int selY;
 	private final Rect selRect = new Rect();
     private final float[] mPos = new float[10];
+	private final boolean highlites[] = {true,false,false,false,false,true,false,true,false,
+										 true, true, false, false, false,false, true, false, true,
+										 false, false, false, false, false, false, true, false, false,
+										 false, false, false, false, false, false, false, false, true,
+										 false, false, true, false, false, false, true, false, true,
+										 false, false, false, false, false, false, false, true, false,
+										 true, false, false, false, true, false, false, false, false,
+										 false, false, false, false, false, false, false, false, false,
+										 false, true, false, false, false, false, false, false, true};
+	private int total_moves = 81 ;
 
 	
 	@Override
@@ -117,6 +131,18 @@ public class PuzzleView extends View {
 					hint.setColor(c[movesleft]);
 					canvas.drawRect(r, hint);
 				}
+				if ( highlites[j*9+i] == true) {
+					getRect(i, j, r);
+					hint.setColor(0x64ffff00) ; // YELLOW
+					canvas.drawRect(r, hint);
+				}
+				if (movesleft == 1 )
+					total_moves-- ;
+/*				if (total_moves == 0) {
+					Toast toast = Toast.makeText(game, R.string.you_won_label, Toast.LENGTH_SHORT);
+				toast.setGravity(Gravity.CENTER, 0, 0);
+				toast.show();
+				}*/
 			}
 		}
 		// Draw the selection
@@ -156,6 +182,12 @@ public class PuzzleView extends View {
 	    case KeyEvent.KEYCODE_ENTER:
 	    case KeyEvent.KEYCODE_DPAD_CENTER:
 	       game.showKeypadOrError(selX, selY);
+		   if (total_moves == 0) {
+		    	new AlertDialog.Builder(this)
+	    		.setTitle(R.string.restaurant_label)
+	    		.setItems(R.array.restaurants,
+	    		.show();
+		   }
 	       break;
 
 		default:
