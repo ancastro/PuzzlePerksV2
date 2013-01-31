@@ -27,11 +27,11 @@
 			</TableRow>
 		    			<TableRow>
 				<Button android:id="@+id/events_button" android:text="@string/events_label" />
-				<Button android:id="@+id/other_button" android:text="@string/other_label" />
+				<Button android:id="@+id/hotel_button" android:text="@string/hotel_label" />
 			</TableRow>
 			<TableRow>
-					<Button android:id="@+id/hotel_button" android:text="@string/hotel_label" />
-			    	<Button android:id="@+id/about_button" android:text="@string/about_label" />
+				<Button android:id="@+id/other_button" android:text="@string/other_label" />
+				<Button android:id="@+id/about_button" android:text="@string/about_label" />
 			</TableRow>
 		</TableLayout>
 </LinearLayout>

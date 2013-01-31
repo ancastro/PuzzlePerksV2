@@ -14,6 +14,10 @@ public final class R {
     }
     public static final class array {
         public static final int difficulty=0x7f060000;
+        public static final int events=0x7f060005;
+        public static final int hotels=0x7f060004;
+        public static final int others=0x7f060002;
+        public static final int personal=0x7f060003;
         public static final int restaurants=0x7f060001;
     }
     public static final class attr {
@@ -31,39 +35,43 @@ public final class R {
         public static final int puzzle_selected=0x7f070009;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int puzzle_logo_1=0x7f020001;
+        public static final int ambrosia_coupon2=0x7f020000;
+        public static final int coupon=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int puzzle_logo_1=0x7f020003;
     }
     public static final class id {
         public static final int about_button=0x7f0b0007;
         public static final int about_content=0x7f0b0000;
-        public static final int continue_button=0x7f0b0012;
+        public static final int continue_button=0x7f0b0013;
+        public static final int coupon_content=0x7f0b0008;
         public static final int events_button=0x7f0b0004;
-        public static final int exit_button=0x7f0b0014;
-        public static final int hotel_button=0x7f0b0006;
+        public static final int exit_button=0x7f0b0015;
+        public static final int hotel_button=0x7f0b0005;
         public static final int imageView1=0x7f0b0001;
-        public static final int keypad=0x7f0b0008;
-        public static final int keypad_1=0x7f0b0009;
-        public static final int keypad_2=0x7f0b000a;
-        public static final int keypad_3=0x7f0b000b;
-        public static final int keypad_4=0x7f0b000c;
-        public static final int keypad_5=0x7f0b000d;
-        public static final int keypad_6=0x7f0b000e;
-        public static final int keypad_7=0x7f0b000f;
-        public static final int keypad_8=0x7f0b0010;
-        public static final int keypad_9=0x7f0b0011;
-        public static final int menu_settings=0x7f0b0015;
-        public static final int new_button=0x7f0b0013;
-        public static final int other_button=0x7f0b0005;
+        public static final int keypad=0x7f0b0009;
+        public static final int keypad_1=0x7f0b000a;
+        public static final int keypad_2=0x7f0b000b;
+        public static final int keypad_3=0x7f0b000c;
+        public static final int keypad_4=0x7f0b000d;
+        public static final int keypad_5=0x7f0b000e;
+        public static final int keypad_6=0x7f0b000f;
+        public static final int keypad_7=0x7f0b0010;
+        public static final int keypad_8=0x7f0b0011;
+        public static final int keypad_9=0x7f0b0012;
+        public static final int menu_settings=0x7f0b0016;
+        public static final int new_button=0x7f0b0014;
+        public static final int other_button=0x7f0b0006;
         public static final int personal_button=0x7f0b0003;
         public static final int restaurant_button=0x7f0b0002;
-        public static final int settings=0x7f0b0016;
+        public static final int settings=0x7f0b0017;
     }
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int activity_puzzle_prizes=0x7f030001;
-        public static final int keypad=0x7f030002;
-        public static final int main=0x7f030003;
+        public static final int coupon=0x7f030002;
+        public static final int keypad=0x7f030003;
+        public static final int main=0x7f030004;
     }
     public static final class menu {
         public static final int activity_puzzle_prizes=0x7f0a0000;
@@ -76,12 +84,19 @@ public final class R {
         public static final int about_title=0x7f08000e;
         public static final int app_name=0x7f08000b;
         public static final int continue_label=0x7f080002;
+        public static final int coupon_title=0x7f080025;
+        public static final int e1_label=0x7f080030;
+        public static final int e2_label=0x7f080031;
         public static final int easy_label=0x7f080018;
         public static final int events_label=0x7f080007;
         public static final int exit_label=0x7f08000a;
         /**  Game 
          */
         public static final int game_title=0x7f08001b;
+        public static final int h1_label=0x7f08002c;
+        public static final int h2_label=0x7f08002d;
+        public static final int h3_label=0x7f08002e;
+        public static final int h4_label=0x7f08002f;
         public static final int hard_label=0x7f08001a;
         public static final int hello=0x7f080000;
         public static final int hello_world=0x7f08000c;
@@ -99,7 +114,13 @@ public final class R {
          */
         public static final int new_game_title=0x7f080017;
         public static final int no_moves_label=0x7f08001c;
+        public static final int o1_label=0x7f080026;
+        public static final int o2_label=0x7f080027;
+        public static final int o3_label=0x7f080028;
         public static final int other_label=0x7f080006;
+        public static final int p1_label=0x7f080029;
+        public static final int p2_label=0x7f08002a;
+        public static final int p3_label=0x7f08002b;
         public static final int personal_label=0x7f080005;
         /**   Restaurants  
          */

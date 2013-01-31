@@ -1,22 +1,23 @@
 package com.example.puzzleprizes;
-
-import android.app.AlertDialog;
+/* PuzzleView originally from Sudoku example.
+ * Added highlites here (should be in Game?)
+ * also added highlites section in onDraw canvas.
+ * Will need to be sent from server to match game.
+ * Tried to put puzzle finish code here, didn't work
+ * and it ended up in Game.
+ */
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 public class PuzzleView extends View {
 	private static final String TAG = "Sudoku";
@@ -33,8 +34,7 @@ public class PuzzleView extends View {
 	private int selX;
 	private int selY;
 	private final Rect selRect = new Rect();
-    private final float[] mPos = new float[10];
-	private final boolean highlites[] = {true,false,false,false,false,true,false,true,false,
+    private final boolean highlites[] = {true,false,false,false,false,true,false,true,false,
 										 true, true, false, false, false,false, true, false, true,
 										 false, false, false, false, false, false, true, false, false,
 										 false, false, false, false, false, false, false, false, true,
@@ -43,8 +43,6 @@ public class PuzzleView extends View {
 										 true, false, false, false, true, false, false, false, false,
 										 false, false, false, false, false, false, false, false, false,
 										 false, true, false, false, false, false, false, false, true};
-	private int total_moves = 81 ;
-
 	
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -136,13 +134,6 @@ public class PuzzleView extends View {
 					hint.setColor(0x64ffff00) ; // YELLOW
 					canvas.drawRect(r, hint);
 				}
-				if (movesleft == 1 )
-					total_moves-- ;
-/*				if (total_moves == 0) {
-					Toast toast = Toast.makeText(game, R.string.you_won_label, Toast.LENGTH_SHORT);
-				toast.setGravity(Gravity.CENTER, 0, 0);
-				toast.show();
-				}*/
 			}
 		}
 		// Draw the selection
@@ -181,13 +172,6 @@ public class PuzzleView extends View {
 	    case KeyEvent.KEYCODE_9:     setSelectedTile(9); break;
 	    case KeyEvent.KEYCODE_ENTER:
 	    case KeyEvent.KEYCODE_DPAD_CENTER:
-	       game.showKeypadOrError(selX, selY);
-		   if (total_moves == 0) {
-		    	new AlertDialog.Builder(this)
-	    		.setTitle(R.string.restaurant_label)
-	    		.setItems(R.array.restaurants,
-	    		.show();
-		   }
 	       break;
 
 		default:
@@ -219,6 +203,11 @@ public class PuzzleView extends View {
 	public void setSelectedTile(int tile) {
 		if (game.setTileIfValid(selX, selY, tile)) {
 			invalidate();//may change hints
+			if (game.isFinished() == 81) {
+				Intent myIntent = new Intent();
+				myIntent.setClassName("com.example.puzzleprizes", "com.example.puzzleprizes.Coupon");
+            	game.startActivity(myIntent);
+			}
 		} else {
 			// Number is not valid for this tile
 			Log.d(TAG, "setSelectedTile: invalid: " + tile);
@@ -237,3 +226,14 @@ mLabelPaint.setTextAlign(Paint.Align.LEFT);
 canvas.drawText(game.getAlphaSub(), 10, 25, mLabelPaint); 
 //canvas.drawPosText(game.getAlphaSub(), mPos, mLabelPaint);
 */
+/*
+public boolean onKeyUp(int keyCode, KeyEvent event) {
+    //do something here
+       game.showKeypadOrError(selX, selY);
+	   if (total_moves == 0) {
+	    	new AlertDialog.Builder(game) .setTitle("You Won!")
+    	        .show();
+	   }
+    return false;
+};
+*/	

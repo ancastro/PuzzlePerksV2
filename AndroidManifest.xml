@@ -31,6 +31,9 @@
        	</activity>
        	<activity android:name=".Game"
        		android:label="@string/game_title" />
-        </application>
+        <activity android:name=".Coupon"
+        	android:label="@string/coupon_title">
+       	</activity>
+       	</application>
     
 </manifest>

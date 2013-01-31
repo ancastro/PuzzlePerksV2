@@ -13,4 +13,24 @@
 		<item>@string/r5_label</item>
 		<item>@string/r6_label</item>
 	</array>
+	<array name="others">
+		<item>@string/o1_label</item>
+		<item>@string/o2_label</item>
+		<item>@string/o3_label</item>
+	</array>
+	<array name="personal">
+		<item>@string/p1_label</item>
+		<item>@string/p2_label</item>
+		<item>@string/p3_label</item>
+	</array>
+		<array name="hotels">
+		<item>@string/h1_label</item>
+		<item>@string/h2_label</item>
+		<item>@string/h3_label</item>
+		<item>@string/h4_label</item>
+	</array>
+	<array name="events">
+		<item>@string/e1_label</item>
+		<item>@string/e2_label</item>
+	</array>
 </resources>

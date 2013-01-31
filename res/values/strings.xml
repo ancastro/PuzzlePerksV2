@@ -23,11 +23,12 @@ Starting with a partially completed 9x9 grid, the
 objective is to fill the grid so that each
 row, each column, and each of the 3x3 boxes
 (also called <i>blocks</i>) contains the characters
-in the "Key"" exactly once.
+in the "Key"" exactly once.  Complete the puzzle to earn your
+<b>valuable coupon!</b>
 	</string>
 
 	<!-- Settings Screen -->
-	<string name="settings_label">Settings...</string>
+	<string name="settings_label">Settings</string>
 	<string name="settings_title">Sudoku settings</string>
 	<string name="settings_shortcut">s</string>
 	<string name="music_title">Music</string>
@@ -54,5 +55,18 @@ in the "Key"" exactly once.
 	<string name='r4_label'>Sly McFly\'s</string>
 	<string name='r5_label'>Cannery Row Brewing</string>
 	<string name='r6_label'>Johnny Rockets</string>
-				
+	<string name="coupon_title">You Won This Coupon!</string>
+	<string name='o1_label'>Outdoor World</string>
+	<string name='o2_label'>Century Cinemas</string>
+	<string name='o3_label'>Creek Bridge Dental</string>
+	<string name='p1_label'>Angel Nails</string>
+	<string name='p2_label'>Kleen Cuts</string>
+	<string name='p3_label'>Saharah Sun Tanning And Boutique</string>
+	<string name='h1_label'>Best Western Ramona Inn</string>
+	<string name='h2_label'>Blue Lagoon Inn</string>
+	<string name='h3_label'>Cypress Tree Inn</string>
+	<string name='h4_label'>Lone Oak Lodges</string>
+	<string name='e1_label'>McCall Events</string>
+	<string name='e2_label'>Monterey Jazz Festival</string>
+								
 </resources>

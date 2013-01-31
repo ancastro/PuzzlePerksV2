@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
+/* Number choice keypad from original Sudoku application. */
 
 public class Keypad extends Dialog {
 	protected static final String TAG = "Sudoku";
