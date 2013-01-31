@@ -84,15 +84,11 @@ public class Game extends Activity {
 		return used[x][y];
 	}
 // Tells PuzzleView that the game is finished, it then shows coupon.	
-	protected int isFinished() {
-		int done = 0 ;
-		for (int x = 0; x < 9; x++) {
-			for (int y = 0; y < 9; y++) {
-				if ( puzzle[y * 9 + x] != 0)
-					done++ ;
-			}
-		}
-		return done ;
+	protected boolean isFinished() {
+		for (int x : puzzle )
+				if ( x == 0 )
+					return false ;
+		return true ;
 	}
 
 	private void calculateUsedTiles() {

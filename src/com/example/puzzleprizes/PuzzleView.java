@@ -203,7 +203,7 @@ public class PuzzleView extends View {
 	public void setSelectedTile(int tile) {
 		if (game.setTileIfValid(selX, selY, tile)) {
 			invalidate();//may change hints
-			if (game.isFinished() == 81) {
+			if (game.isFinished()) {
 				Intent myIntent = new Intent();
 				myIntent.setClassName("com.example.puzzleprizes", "com.example.puzzleprizes.Coupon");
             	game.startActivity(myIntent);
