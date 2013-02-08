@@ -25,6 +25,7 @@ public class PuzzleView extends View {
 	public PuzzleView(Context context) {
 		super(context);
 		this.game = (Game) context;
+		highlites = game.getHighlights();
 		setFocusable(true);
 		setFocusableInTouchMode(true);
 	}
@@ -34,15 +35,7 @@ public class PuzzleView extends View {
 	private int selX;
 	private int selY;
 	private final Rect selRect = new Rect();
-    private final boolean highlites[] = {true,false,false,false,false,true,false,true,false,
-										 true, true, false, false, false,false, true, false, true,
-										 false, false, false, false, false, false, true, false, false,
-										 false, false, false, false, false, false, false, false, true,
-										 false, false, true, false, false, false, true, false, true,
-										 false, false, false, false, false, false, false, true, false,
-										 true, false, false, false, true, false, false, false, false,
-										 false, false, false, false, false, false, false, false, false,
-										 false, true, false, false, false, false, false, false, true};
+    private final boolean highlites[] ;
 	
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {

@@ -131,6 +131,7 @@ public final class R {
         public static final int r5_label=0x7f080023;
         public static final int r6_label=0x7f080024;
         public static final int restaurant_label=0x7f080004;
+        public static final int server_url=0x7f080032;
         /**  Settings Screen 
          */
         public static final int settings_label=0x7f080010;
