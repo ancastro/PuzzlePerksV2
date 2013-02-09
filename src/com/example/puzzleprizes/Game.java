@@ -59,12 +59,12 @@ public class Game extends Activity {
 		business = getIntent().getStringExtra(KEY_BUSINESS);
 		// this next part will wait indefinitely for the data from the server.
 		getServerData(ServerInterface.getPuzzleData(business, getString(R.string.server_url)));
-		calculateUsedTiles();
 		
 		String mystring = getResources().getString(R.string.game_title);
 		setTitle(mystring + " Key " + getAlphaSub());
 		
 		puzzle = getPuzzle(diff);
+		calculateUsedTiles();
 		puzzleView = new PuzzleView(this);
 		setContentView(puzzleView);
 		puzzleView.requestFocus();
