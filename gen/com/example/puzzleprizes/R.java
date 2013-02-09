@@ -85,6 +85,7 @@ public final class R {
         public static final int app_name=0x7f08000b;
         public static final int continue_label=0x7f080002;
         public static final int coupon_title=0x7f080025;
+        public static final int coupon_url=0x7f080033;
         public static final int e1_label=0x7f080030;
         public static final int e2_label=0x7f080031;
         public static final int easy_label=0x7f080018;
