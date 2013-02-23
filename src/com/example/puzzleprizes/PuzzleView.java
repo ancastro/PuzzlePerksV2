@@ -6,6 +6,8 @@ package com.example.puzzleprizes;
  * Tried to put puzzle finish code here, didn't work
  * and it ended up in Game.
  */
+import java.net.URLEncoder;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -13,6 +15,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
+import android.net.Uri;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -192,14 +195,19 @@ public class PuzzleView extends View {
 		Log.d(TAG, "onTouchEvent: x" + selX + ", y" + selY);
 		return true;
 	}
-
-	public void setSelectedTile(int tile) {
+;	public void setSelectedTile(int tile) {
 		if (game.setTileIfValid(selX, selY, tile)) {
 			invalidate();//may change hints
-			if (game.isFinished()) {
+			if (game.isFinished()) {/*
 				Intent myIntent = new Intent();
 				myIntent.setClassName("com.example.puzzleprizes", "com.example.puzzleprizes.Coupon");
-            	game.startActivity(myIntent);
+            	game.startActivity(myIntent);*/
+	            String data = game.getString(R.string.coupphp_url)
+	            		+ "?command=getPromotion&promo=" + game.getPromoID();
+
+				Uri uri = Uri.parse(data);
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				game.startActivity(intent);
 			}
 		} else {
 			// Number is not valid for this tile

@@ -42,6 +42,7 @@ public class Game extends Activity {
 	private final String[] alphaSub = new String[DIFFICULTY_HARD+1] ;
 	// alphaSub is the letter substitution
 	private int diff ;
+	private String promo_id[] = new String[DIFFICULTY_HARD+1];
 	private String puz[] = new String[DIFFICULTY_HARD+1];
 	private String highlights[] = new String[DIFFICULTY_HARD+1] ;
 	private boolean bHighLights[][] = new boolean[DIFFICULTY_HARD+1][PUZZLE_SIZE] ;
@@ -214,6 +215,12 @@ public class Game extends Activity {
 	private void setTile(int x, int y, int value) {
 		puzzle[y * 9 + x] = value;
 	}
+	
+// @return promo_id for this game.
+	protected String getPromoID() {
+		return promo_id[diff];
+	}
+	
 // @return alphabetic character associated with position x.	
 	protected String getAlphaSub(int x) {
 		return alphaSub[diff].substring(x,x+1);
@@ -261,15 +268,18 @@ public class Game extends Activity {
         		puzzList[k++] = tk2.nextToken();
         	}
         	if ( k >= 3 ) { // make sure we have everything
+        		promo_id[diff] = (puzzList[0].length() > 0) ? puzzList[0] : "0" ;
         		alphaSub[diff] = (puzzList[1].length() > 0) ? puzzList[1] : "ABCDEFGHJ" ;
         		puz[diff] = (puzzList[2].length() > 0) ? puzzList[2] : hardPuzzle ;
         		highlights[diff] = (puzzList[3].length() > 0) ? puzzList[3] : highlightnull ; 
             } else {
+            	promo_id[diff] = "0";
             	alphaSub[diff] = "ABCDEFGHJ" ;
             	puz[diff] = hardPuzzle;
             	highlights[diff] = highlightnull ;
             }
         } else {
+        	promo_id[diff] = "0";
         	alphaSub[diff] = "ABCDEFGHJ" ;
         	puz[diff] = hardPuzzle ;
         	highlights[diff] = highlightnull ;

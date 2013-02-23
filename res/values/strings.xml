@@ -70,5 +70,6 @@ in the "Key"" exactly once.  Complete the puzzle to earn your
 	<string name='e2_label'>Monterey Jazz Festival</string>
 	<string name="server_url">http://wump.tk/~keith/PuzzlePerks.net/server.php</string>
 	<string name="coupon_url">http://wump.tk/~keith/PuzzlePerks.net/coupon.html</string>
+	<string name="coupphp_url">http://wump.tk/~keith/PuzzlePerks.net/coupon.php</string>
 								
 </resources>

@@ -1,15 +1,9 @@
 package com.example.puzzleprizes;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-/* this simple activity presents the coupon dialog.
- * It is defined is res/layout/coupon.xml, and the activity 
- * .About defined in AndroidManifest.xml
- * In the long run, this needs to do 2 things:
- * Display the appropriate coupon (related to the game)
- * and save the coupon in some way on the SD card. 
- */
-import android.webkit.WebView;
 
 /* Activity to display coupon.
  * Now uses WebView to grab the coupon from the web.
@@ -21,8 +15,11 @@ public class Coupon extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 //		setContentView(R.layout.coupon);
-		WebView webview = new WebView(this);
+/*		WebView webview = new WebView(this);
 		setContentView(webview);
-		webview.loadUrl(getString(R.string.coupon_url));
+		webview.loadUrl(getString(R.string.coupon_url));*/
+		Uri uri = Uri.parse(getString(R.string.coupon_url));
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		startActivity(intent);
 	}
 }
