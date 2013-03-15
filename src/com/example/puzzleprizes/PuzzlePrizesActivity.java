@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.puzzleprizes.R;
@@ -41,16 +40,9 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_puzzle_prizes);
-			ImageView image = (ImageView) findViewById(R.id.imageView1);
+//			ImageView image = (ImageView) findViewById(R.id.imageView1);
 	        
 	        //Set up click listeners for all the buttons
-/*	        View continueButton = findViewById(R.id.continue_button);
-	        continueButton.setOnClickListener(new View.OnClickListener() {
-                 public void onClick(View view) {
-                 }
-     });*/
-//	        continueButton.setOnClickListener((android.view.View.OnClickListener) this);
-            String[] restaurantList = {""};  // used by background thread to get list
 
 	        View otherButton = findViewById(R.id.other_button);
 	        otherButton.setOnClickListener(new View.OnClickListener() {
@@ -95,9 +87,11 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
     	    		finish();
                 }
     });*/
-            /*
+            /**
              * Spawn a GetListTask thread. This thread will get the data from the
              * server in the background, so as not to block our main (UI) thread.
+             * Probably should change so that it DOES block the main thread and 
+             * add a splash screen.
              */
             (new GetListTask()).execute((Object)null);
 	    }
@@ -240,7 +234,7 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
          * This uses the AsyncTask class as a starting point. For more info, see
          * http://android-developers.blogspot.com/2009/05/painless-threading.html.
          */
-        @SuppressWarnings("unchecked")
+//        @SuppressWarnings("unchecked")
         private class GetListTask extends AsyncTask<Object, Object, Object> {
 
                 /**
@@ -306,4 +300,12 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
         }
 
 }
-
+/* Code Graveyard
+          View continueButton = findViewById(R.id.continue_button);
+	        continueButton.setOnClickListener(new View.OnClickListener() {
+                 public void onClick(View view) {
+                 }
+     });
+	        continueButton.setOnClickListener((android.view.View.OnClickListener) this);
+            String[] restaurantList = {""};  // used by background thread to get list
+*/

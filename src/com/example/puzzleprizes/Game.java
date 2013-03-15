@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
-/* the actual game of Sudoku with letters substituted for the numbers.
+/** the actual game of Sudoku with letters substituted for the numbers.
  * Changes by Keith Gudger 2013, include:
  * a) pass merchant string from the list of coupon suppliers.
  * This comes from the web server.  
@@ -24,29 +24,31 @@ public class Game extends Activity {
 	private static final String TAG = "Sudoku";
 	
 	public static final String KEY_DIFFICULTY = "com.example.puzzleprizes.difficulty";
-	public static final int DIFFICULTY_EASY = 0;
-	public static final int DIFFICULTY_MEDIUM =1;
-	public static final int DIFFICULTY_HARD = 2;
+	public enum Difficulty { DIFFICULTY_EASY, DIFFICULTY_MEDIUM, DIFFICULTY_HARD;
+								public static final int size = Difficulty.values().length;} ;
+
 	public static final int PUZZLE_SIZE = 81 ;
-	/* difficulty is passed in, will select puzzle from server string.
+	
+	/** difficulty is passed in, will select puzzle from server string.
 	 * if server string does not include data for this difficulty level,
 	 * a default game supplied.  Currently "DIFFICULTY_HARD" is used to 
 	 * size the puzzle data arrays.  
+	 * EDIT added Difficulty.size to get size of enumeration
 	 */
 	public static final String KEY_BUSINESS = "com.example.puzzleprizes.business";
-	/* The String business will contain the string needed for the server.
+	/** The String business will contain the string needed for the server.
 	 * getPuzzleData(business,server_url) returns the puzzle data.
 	 */
 	private int puzzle[] = new int[9 * 9];
 	private String business ;
-	private final String[] alphaSub = new String[DIFFICULTY_HARD+1] ;
+	private final String[] alphaSub = new String[Difficulty.size] ;
 	// alphaSub is the letter substitution
 	private int diff ;
-	private String promo_id[] = new String[DIFFICULTY_HARD+1];
-	private String puz[] = new String[DIFFICULTY_HARD+1];
-	private String highlights[] = new String[DIFFICULTY_HARD+1] ;
-	private boolean bHighLights[][] = new boolean[DIFFICULTY_HARD+1][PUZZLE_SIZE] ;
-	/* highlights is the string defining which squares are highlighted.
+	private String promo_id[] = new String[Difficulty.size];
+	private String puz[] = new String[Difficulty.size];
+	private String highlights[] = new String[Difficulty.size] ;
+	private boolean bHighLights[][] = new boolean[Difficulty.size][PUZZLE_SIZE] ;
+	/** highlights is the string defining which squares are highlighted.
 	 * bHighLights is the array of booleans for PuzzleView.
 	 */
 	private PuzzleView puzzleView;
@@ -56,7 +58,7 @@ public class Game extends Activity {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "onCreate");
 		
-		diff = getIntent().getIntExtra(KEY_DIFFICULTY, DIFFICULTY_EASY);
+		diff = getIntent().getIntExtra(KEY_DIFFICULTY, (int)(Difficulty.DIFFICULTY_EASY.ordinal()));
 		business = getIntent().getStringExtra(KEY_BUSINESS);
 		// this next part will wait indefinitely for the data from the server.
 		getServerData(ServerInterface.getPuzzleData(business, getString(R.string.server_url)));
@@ -102,8 +104,8 @@ public class Game extends Activity {
 	protected int[] getUsedTiles(int x, int y) {
 		return used[x][y];
 	}
-/* Tells PuzzleView that the game is finished, it then shows coupon.
- * @return boolean if it's finished, true.	
+/** Tells PuzzleView that the game is finished, it then shows coupon.
+ *  @return boolean if it's finished, true.	
  */
 	protected boolean isFinished() {
 		for (int x : puzzle )
@@ -292,3 +294,7 @@ public class Game extends Activity {
 		
 	}
 }
+// Code Graveyard
+/*	public static final int DIFFICULTY_EASY = 0;
+public static final int DIFFICULTY_MEDIUM =1;
+public static final int DIFFICULTY_HARD = 2;*/

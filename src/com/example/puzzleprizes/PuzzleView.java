@@ -1,13 +1,4 @@
 package com.example.puzzleprizes;
-/* PuzzleView originally from Sudoku example.
- * Added highlites here (should be in Game?)
- * also added highlites section in onDraw canvas.
- * Will need to be sent from server to match game.
- * Tried to put puzzle finish code here, didn't work
- * and it ended up in Game.
- */
-import java.net.URLEncoder;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
