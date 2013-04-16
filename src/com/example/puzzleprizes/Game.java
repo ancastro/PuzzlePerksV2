@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
+import android.widget.TextView;
 /** the actual game of Sudoku with letters substituted for the numbers.
  * Changes by Keith Gudger 2013, include:
  * a) pass merchant string from the list of coupon suppliers.
@@ -52,6 +53,7 @@ public class Game extends Activity {
 	 * bHighLights is the array of booleans for PuzzleView.
 	 */
 	private PuzzleView puzzleView;
+	private TextView puzzleLettersKey;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +67,15 @@ public class Game extends Activity {
 		
 		String mystring = getResources().getString(R.string.game_title);
 		setTitle(mystring + " Key " + getAlphaSub());
+		//Custom Code
+		puzzleLettersKey = new TextView(this);
+		puzzleLettersKey.setText(getAlphaSub());
+		//End Custom Code
 		
 		puzzle = getPuzzle(diff);
 		calculateUsedTiles();
 		puzzleView = new PuzzleView(this);
+		
 		setContentView(puzzleView);
 		puzzleView.requestFocus();
 	}

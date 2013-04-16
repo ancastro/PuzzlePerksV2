@@ -1,37 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@color/background"
+	android:background="@drawable/background"
 		android:orientation="vertical"
 		android:layout_height="fill_parent"
 		android:layout_width="fill_parent"
 		android:layout_gravity="center"
 		android:paddingLeft="20dip"
 		android:paddingRight="20dip" >
-		<ImageView
-			android:text="@string/main_title"
-			android:id="@+id/imageView1"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginBottom="20dip"
- 	        android:src="@drawable/puzzle_logo_1" />
-			android:textSize="24.5sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:text="@string/title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp" 
+        android:textColor="#222222" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    
+			
 		<TableLayout
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:layout_gravity="center"
-			android:stretchColumns="*" >
+			android:stretchColumns="1" >
 			<TableRow>
 				<Button android:id="@+id/restaurant_button" android:text="@string/restaurant_label" />
+			</TableRow>
+			<TableRow>
 				<Button android:id="@+id/personal_button" android:text="@string/personal_label" />
 			</TableRow>
-		    			<TableRow>
+		    <TableRow>
 				<Button android:id="@+id/events_button" android:text="@string/events_label" />
+			</TableRow>
+			<TableRow>
 				<Button android:id="@+id/hotel_button" android:text="@string/hotel_label" />
 			</TableRow>
 			<TableRow>
 				<Button android:id="@+id/other_button" android:text="@string/other_label" />
+			</TableRow>
+			<TableRow>
 				<Button android:id="@+id/about_button" android:text="@string/about_label" />
 			</TableRow>
 		</TableLayout>
+
+		<TableLayout
+		    android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+		    android:stretchColumns="1" >
+
+		    <TableRow>
+		        <TextView
+			        android:id="@+id/textView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_margin="40dp"
+			        android:text="Hi"
+			        android:textColor="#222222" />
+		    </TableRow>
+
+		    <TableRow>
+		        <TextView
+			        android:id="@+id/textView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:text="There" />
+		    </TableRow>
+
+		    <TableRow>
+		        <TextView
+			        android:id="@+id/textView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:text="Hello"
+			        />
+		    </TableRow>
+
+		    <TableRow>
+		        <TextView
+			        android:id="@+id/textView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:text="Hello"
+			        />
+		    </TableRow>
+		</TableLayout>
+
+	</LinearLayout>
 </LinearLayout>

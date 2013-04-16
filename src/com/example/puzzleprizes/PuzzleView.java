@@ -34,6 +34,7 @@ public class PuzzleView extends View {
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		width = w / 9f;
+		//Custom code change to height = (h / 9f) - 12; to resize height
 		height = h / 9f;
 		getRect(selX, selY, selRect);
 		Log.d(TAG, "onSizeChanged: width " + width + " height " + height);
@@ -48,19 +49,25 @@ public class PuzzleView extends View {
 	protected void onDraw(Canvas canvas) {
 		// Draw the background
 		Paint background = new Paint();
-		background.setColor(getResources().getColor(R.color.puzzle_background));
+		//Custom code
+		//background.setColor(getResources().getColor(R.color.puzzle_background));
+		background.setARGB(80, 10, 10, 10);
 		canvas.drawRect(0, 0, getWidth(), getHeight(), background);
 		
 		// Draw the board
 		// Definte colors for the grid lines
 		Paint dark = new Paint();
 		dark.setColor(getResources().getColor(R.color.puzzle_dark));
+		//Custom code
+		dark.setStrokeWidth(10);
 		
 		Paint hilite = new Paint();
 		hilite.setColor(getResources().getColor(R.color.puzzle_hilite));
 		
 		Paint light = new Paint();
 		light.setColor(getResources().getColor(R.color.puzzle_light));
+		//Custom code
+		light.setStrokeWidth(10);
 		
 		// Draw the minor grid lines
 		for (int i = 0; i < 9; i++) {

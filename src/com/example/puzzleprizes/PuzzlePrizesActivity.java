@@ -214,10 +214,20 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    	final String business[] = charSequenceItems;
 	    	new AlertDialog.Builder(this)
     		.setTitle(label)
+    		//Add ok button on dialog to proceed to difficulty dialog
+    		/*.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialoginterface, int item) {
+    	               // User clicked OK button
+    	        	   openNewGameDialog(cat, item, business);
+    	           }
+    	       })*/
+
+    				
 //    		.setItems(type_array,
     		.setItems(charSequenceItems,
     			new DialogInterface.OnClickListener() {
 		    		public void onClick(DialogInterface dialoginterface, int item) {
+		    			//comment this out
 		    			openNewGameDialog(cat, item, business);
 		    		}
     	}).show();

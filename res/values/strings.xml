@@ -14,6 +14,9 @@
     <string name="app_name">PuzzlePerks</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="title">Puzzle Perks</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
     
 	<!-- About Screen -->
 	<string name="about_title">About PuzzlePerks</string>
