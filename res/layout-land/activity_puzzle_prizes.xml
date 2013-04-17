@@ -8,16 +8,11 @@
 		android:paddingLeft="20dip"
 		android:paddingRight="20dip" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="40dp"
-        android:text="@string/title"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50sp" 
-        android:textColor="#222222" />
+        android:src="@drawable/puzzlelogo" />
 
 			
 		<TableLayout

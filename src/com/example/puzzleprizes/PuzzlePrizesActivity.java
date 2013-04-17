@@ -1,5 +1,6 @@
 package com.example.puzzleprizes;
 
+import java.util.Random;
 import java.util.StringTokenizer;
 
 import android.app.Activity;
@@ -35,6 +36,7 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	public enum Category { RESTAURANT, EVENT, PERSONAL, HOTEL, OTHER } ;
 	public String[] finalRestList, finalHotList, 
 					finalEventList, finalPersonalList, finalOtherList ;
+	public int businessLength = 0;
 	 
 	    @Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -131,12 +133,18 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    }
 
 	    private void openNewGameDialog(final Category cat, final int item, final String[] business) {
+	    	//Custom Code
+	    	Random randomNumber = new Random();
+	    	final int randomBusiness = randomNumber.nextInt(businessLength);
+	    	
 	    	new AlertDialog.Builder(this)
 	    		.setTitle(R.string.new_game_title)
 	    		.setItems(R.array.difficulty,
 	    			new DialogInterface.OnClickListener() {
 			    		public void onClick(DialogInterface dialoginterface, int i) {
-			    			startGame(i,business[item]);
+			    			//Custom Code
+			    			startGame(i,business[randomBusiness]);
+			    			//startGame(i,business[item]);
 			    		}
 	    	}).show();
 	    }
@@ -211,6 +219,9 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    		}
 	    		break ;
 	    	}
+	    	//Custom Code
+	    	businessLength = charSequenceItems.length;
+	    	
 	    	final String business[] = charSequenceItems;
 	    	new AlertDialog.Builder(this)
     		.setTitle(label)

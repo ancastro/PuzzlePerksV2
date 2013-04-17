@@ -1,6 +1,7 @@
 package com.example.puzzleprizes;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -50,9 +51,11 @@ public class PuzzleView extends View {
 		// Draw the background
 		Paint background = new Paint();
 		//Custom code
-		//background.setColor(getResources().getColor(R.color.puzzle_background));
-		background.setARGB(80, 10, 10, 10);
+		background.setColor(getResources().getColor(R.color.puzzle_background));
+		//background.setARGB(80, 10, 10, 10);
 		canvas.drawRect(0, 0, getWidth(), getHeight(), background);
+		
+		canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gameboard), 0, 0, null);
 		
 		// Draw the board
 		// Definte colors for the grid lines
