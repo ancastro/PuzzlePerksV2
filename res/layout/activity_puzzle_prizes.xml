@@ -23,70 +23,20 @@
 		<TableLayout
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:stretchColumns="1" >
+			android:layout_gravity="center"
+			android:stretchColumns="*" >
 			<TableRow>
 				<Button android:id="@+id/restaurant_button" android:text="@string/restaurant_label" />
-			</TableRow>
-			<TableRow>
 				<Button android:id="@+id/personal_button" android:text="@string/personal_label" />
 			</TableRow>
-		    <TableRow>
+		    			<TableRow>
 				<Button android:id="@+id/events_button" android:text="@string/events_label" />
-			</TableRow>
-			<TableRow>
 				<Button android:id="@+id/hotel_button" android:text="@string/hotel_label" />
 			</TableRow>
 			<TableRow>
 				<Button android:id="@+id/other_button" android:text="@string/other_label" />
-			</TableRow>
-			<TableRow>
 				<Button android:id="@+id/about_button" android:text="@string/about_label" />
 			</TableRow>
-		</TableLayout>
-
-		<TableLayout
-		    android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-		    android:stretchColumns="1" >
-
-		    <TableRow>
-		        <TextView
-			        android:id="@+id/textView1"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_margin="40dp"
-			        android:text="Hi"
-			        android:textColor="#222222" />
-		    </TableRow>
-
-		    <TableRow>
-		        <TextView
-			        android:id="@+id/textView1"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_gravity="center"
-			        android:text="There" />
-		    </TableRow>
-
-		    <TableRow>
-		        <TextView
-			        android:id="@+id/textView1"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_gravity="center"
-			        android:text="Hello"
-			        />
-		    </TableRow>
-
-		    <TableRow>
-		        <TextView
-			        android:id="@+id/textView1"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_gravity="center"
-			        android:text="Hello"
-			        />
-		    </TableRow>
 		</TableLayout>
 
 	</LinearLayout>
