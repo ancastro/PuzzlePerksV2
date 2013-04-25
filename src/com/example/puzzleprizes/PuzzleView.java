@@ -50,8 +50,8 @@ public class PuzzleView extends View {
 		// Draw the background
 		Paint background = new Paint();
 		//Custom code
-		//background.setColor(getResources().getColor(R.color.puzzle_background));
-		background.setARGB(80, 10, 10, 10);
+		background.setColor(getResources().getColor(R.color.puzzle_background));
+		//background.setARGB(80, 10, 10, 10);
 		canvas.drawRect(0, 0, getWidth(), getHeight(), background);
 		
 		// Draw the board

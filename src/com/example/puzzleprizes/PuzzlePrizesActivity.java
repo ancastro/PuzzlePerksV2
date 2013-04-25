@@ -1,5 +1,6 @@
 package com.example.puzzleprizes;
 
+import java.util.Random;
 import java.util.StringTokenizer;
 
 import android.app.Activity;
@@ -35,13 +36,14 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	public enum Category { RESTAURANT, EVENT, PERSONAL, HOTEL, OTHER } ;
 	public String[] finalRestList, finalHotList, 
 					finalEventList, finalPersonalList, finalOtherList ;
-	 
+	public int businessLength = 0;
+
 	    @Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_puzzle_prizes);
 //			ImageView image = (ImageView) findViewById(R.id.imageView1);
-	        
+
 	        //Set up click listeners for all the buttons
 
 	        View otherButton = findViewById(R.id.other_button);
@@ -104,7 +106,7 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 //	    	inflater.inflate(R.menu.menu, menu);
 	    	return true;
 	    }
-	 
+
 	    @Override
 	    public boolean onOptionsItemSelected(MenuItem item) {
 	    	switch(item.getItemId()) {
@@ -114,7 +116,7 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    	}
 	    	return false;
 	    }
-	    
+
 	    public void onClick(View v) {
 	    	switch (v.getId()) {
 	    	case R.id.about_button:
@@ -125,18 +127,24 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    		finish();
 	    		break;
 	    	case R.id.continue_button:
-	    		
+
 	    		break;
 	    	}
 	    }
 
 	    private void openNewGameDialog(final Category cat, final int item, final String[] business) {
+	    	//Custom Code
+	    	Random randomNumber = new Random();
+	    	final int randomBusiness = randomNumber.nextInt(businessLength);
+
 	    	new AlertDialog.Builder(this)
 	    		.setTitle(R.string.new_game_title)
 	    		.setItems(R.array.difficulty,
 	    			new DialogInterface.OnClickListener() {
 			    		public void onClick(DialogInterface dialoginterface, int i) {
-			    			startGame(i,business[item]);
+			    			//Custom Code
+			    			startGame(i,business[randomBusiness]);
+			    			//startGame(i,business[item]);
 			    		}
 	    	}).show();
 	    }
@@ -148,7 +156,7 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    	intent.putExtra(Game.KEY_BUSINESS, business) ;
 	    	startActivity(intent);
 	    }
-	    
+
 	    private void openCategoryDialog(final Category cat) {
 	    	Log.d(TAG, "clicked on Category Button");
 	    	int label ;
@@ -211,6 +219,9 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 	    		}
 	    		break ;
 	    	}
+	    	//Custom Code
+	    	businessLength = charSequenceItems.length;
+
 	    	final String business[] = charSequenceItems;
 	    	new AlertDialog.Builder(this)
     		.setTitle(label)
@@ -236,9 +247,9 @@ public class PuzzlePrizesActivity extends Activity implements OnClickListener {
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
         /**
          * Used to implement an asynchronous retrieval of the list from the web.
          * This uses the AsyncTask class as a starting point. For more info, see
